@@ -12,6 +12,8 @@ const { mapsLink: MAPS_LINK, mapsEmbed: MAPS_EMBED } = buildGoogleMapsUrls(
 );
 
 export default function Home() {
+  const heroTitle = siteMock.brand.name.split(",")[0] || siteMock.brand.name;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <a
@@ -21,30 +23,30 @@ export default function Home() {
         Saltar al contenido
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-black/5 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-foreground/15 text-white backdrop-blur supports-[backdrop-filter]:bg-foreground/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3">
-            <PonienteLogo className="h-10 w-10 text-accent" />
+            <PonienteLogo className="h-10 w-10 text-white" />
             <div className="leading-tight">
               <p className="text-sm font-semibold tracking-tight">PONIENTE</p>
-              <p className="text-xs text-foreground/70">{siteMock.brand.subtitle}</p>
+              <p className="text-xs text-white/70">{siteMock.brand.subtitle}</p>
             </div>
           </div>
 
-          <nav className="hidden items-center gap-6 text-sm text-foreground/80 md:flex">
-            <a className="hover:text-foreground" href="#menu">
+          <nav className="hidden items-center gap-6 text-sm text-white/80 md:flex">
+            <a className="hover:text-white" href="#menu">
               Menú
             </a>
-            <a className="hover:text-foreground" href="#galeria">
+            <a className="hover:text-white" href="#galeria">
               Galería
             </a>
-            <a className="hover:text-foreground" href="#resenas">
+            <a className="hover:text-white" href="#resenas">
               Reseñas
             </a>
-            <a className="hover:text-foreground" href="#ubicacion">
+            <a className="hover:text-white" href="#ubicacion">
               Ubicación
             </a>
-            <a className="hover:text-foreground" href="#contacto">
+            <a className="hover:text-white" href="#contacto">
               Contacto
             </a>
           </nav>
@@ -54,7 +56,7 @@ export default function Home() {
               href={MAPS_LINK}
               target="_blank"
               rel="noreferrer"
-              className="hidden rounded-full border border-foreground/15 px-4 py-2 text-sm font-medium text-foreground/90 hover:border-foreground/25 hover:text-foreground sm:inline-flex"
+              className="hidden rounded-full border border-white/25 bg-white/5 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10 sm:inline-flex"
             >
               Cómo llegar
             </a>
@@ -70,76 +72,57 @@ export default function Home() {
         </div>
       </header>
 
-      <main id="contenido" className="mx-auto max-w-6xl px-4 sm:px-6">
-        <section className="grid items-center gap-10 py-12 md:grid-cols-2 md:py-16">
-          <div>
-            <p className="inline-flex items-center rounded-full border border-foreground/15 bg-background px-3 py-1 text-xs font-semibold text-foreground/80">
-              Bar + playa + atardecer • Demo lista para vender
-            </p>
-            <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-              {siteMock.brand.name}
-            </h1>
-            <p className="mt-4 text-pretty text-lg text-foreground/75">
-              {siteMock.brand.tagline}. Sol, mar, naturaleza y buena vibra: una
-              web simple, linda y directa para que te encuentren y reserven.
-            </p>
+      <section className="relative isolate w-full">
+        <div className="relative h-[92vh] min-h-[640px] w-full">
+          <Image
+            src={siteMock.gallery.hero}
+            alt="Portada del bar"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-background" />
+          <div className="absolute inset-0">
+            <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-14 pt-28 sm:px-6">
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white/90 backdrop-blur">
+                {siteMock.brand.city} · {siteMock.hours.days} · {siteMock.hours.open}–{siteMock.hours.close}
+              </p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={siteMock.links.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-accent-foreground hover:opacity-90"
-              >
-                Reservar por WhatsApp
-              </a>
-              <a
-                href="#menu"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-foreground/15 px-6 text-sm font-semibold text-foreground/90 hover:border-foreground/25 hover:text-foreground"
-              >
-                Ver menú
-              </a>
+              <h1 className="font-display mt-5 max-w-3xl text-balance text-5xl font-extrabold tracking-tight text-white sm:text-7xl">
+                {heroTitle}
+              </h1>
+              <p className="font-display mt-2 text-2xl font-semibold tracking-tight text-white/95 sm:text-3xl">
+                Bar de Playa
+              </p>
+              <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-white/85 sm:text-lg">
+                {siteMock.brand.tagline}. Bajás, pedís algo rico y te quedás a ver el atardecer.
+              </p>
+
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={siteMock.links.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-accent px-7 text-sm font-semibold text-accent-foreground hover:opacity-90"
+                >
+                  Reservar por WhatsApp
+                </a>
+                <a
+                  href="#menu"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 bg-white/5 px-7 text-sm font-semibold text-white hover:bg-white/10"
+                >
+                  Ver menú
+                </a>
+              </div>
+
+              <p className="mt-4 text-xs text-white/70">{siteMock.gallery.note}</p>
             </div>
-
-            <dl className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-foreground/10 bg-surface/70 p-4 shadow-sm">
-              <div>
-                <dt className="text-xs font-medium text-foreground/60">Ambiente</dt>
-                <dd className="mt-1 text-sm font-semibold">Playero</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-medium text-foreground/60">Coctelería</dt>
-                <dd className="mt-1 text-sm font-semibold">De autor</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-medium text-foreground/60">Ideal</dt>
-                <dd className="mt-1 text-sm font-semibold">Bajar a la playa</dd>
-              </div>
-            </dl>
           </div>
+        </div>
+      </section>
 
-          <div className="relative">
-            <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-b from-accent to-transparent opacity-10" />
-            <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-surface shadow-sm">
-              <div className="relative h-[420px] w-full sm:h-[460px]">
-                <Image
-                  src={siteMock.gallery.hero}
-                  alt="Portada del bar (demo)"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-foreground/10 bg-background/70 px-4 py-2 text-xs font-semibold text-foreground/80 backdrop-blur">
-                    {siteMock.brand.city} · {siteMock.hours.open}–{siteMock.hours.close}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p className="mt-3 text-xs text-foreground/60">{siteMock.gallery.note}</p>
-          </div>
-        </section>
+      <main id="contenido" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
 
         <section className="grid gap-6 border-t border-foreground/10 py-12 md:grid-cols-3">
           {[
@@ -166,7 +149,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="menu" className="border-t border-foreground/10 py-14">
+        <section id="menu" className="scroll-mt-24 border-t border-foreground/10 py-14">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight">Menú (muestra)</h2>
@@ -205,7 +188,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="galeria" className="border-t border-foreground/10 py-14">
+        <section id="galeria" className="scroll-mt-24 border-t border-foreground/10 py-14">
           <h2 className="text-2xl font-semibold tracking-tight">Galería (demo)</h2>
           <p className="mt-2 max-w-2xl text-sm text-foreground/75">
             Para esta muestra uso imágenes ilustrativas propias. Si los dueños
@@ -230,10 +213,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="resenas"
-          className="border-t border-foreground/10 py-14"
-        >
+        <section id="resenas" className="scroll-mt-24 border-t border-foreground/10 py-14">
           <div className="grid gap-6 md:grid-cols-3">
             <div className="md:col-span-1">
               <h2 className="text-2xl font-semibold tracking-tight">
@@ -266,7 +246,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="ubicacion" className="border-t border-foreground/10 py-14">
+        <section id="ubicacion" className="scroll-mt-24 border-t border-foreground/10 py-14">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight">Ubicación</h2>
@@ -321,7 +301,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contacto" className="border-t border-foreground/10 py-14">
+        <section id="contacto" className="scroll-mt-24 border-t border-foreground/10 py-14">
           <div className="rounded-3xl border border-foreground/10 bg-gradient-to-b from-foreground/5 to-transparent p-8 md:p-10">
             <div className="grid gap-8 md:grid-cols-2 md:items-center">
               <div>
