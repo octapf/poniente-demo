@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Imagen ilustrativa: detalles del bar (demo)">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#1f2a44"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+
+  <g fill="#ffffff" opacity="0.16">
+    <rect x="140" y="190" width="920" height="420" rx="40"/>
+    <rect x="220" y="260" width="280" height="280" rx="28" opacity="0.22"/>
+    <rect x="540" y="260" width="380" height="90" rx="18" opacity="0.22"/>
+    <rect x="540" y="370" width="380" height="60" rx="18" opacity="0.18"/>
+    <rect x="540" y="450" width="280" height="60" rx="18" opacity="0.18"/>
+  </g>
+
+  <g>
+    <rect x="64" y="64" width="520" height="120" rx="22" fill="#000" opacity="0.45"/>
+    <text x="92" y="122" fill="#fff" font-size="34" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-weight="700">Detalles</text>
+    <text x="92" y="155" fill="#fff" opacity="0.85" font-size="16" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">Ilustración demo</text>
+  </g>
+</svg>

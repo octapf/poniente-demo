@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Imagen ilustrativa: atardecer en la playa (demo)">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect y="520" width="1200" height="280" fill="#0b2a3a" opacity="0.6"/>
+  <circle cx="300" cy="360" r="120" fill="#fff" opacity="0.12"/>
+  <path d="M0,560 C180,520 280,620 420,580 C560,540 680,610 820,570 C960,530 1080,600 1200,560 L1200,800 L0,800 Z" fill="#000" opacity="0.25"/>
+
+  <g>
+    <rect x="64" y="64" width="520" height="120" rx="22" fill="#000" opacity="0.45"/>
+    <text x="92" y="122" fill="#fff" font-size="34" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-weight="700">Atardecer</text>
+    <text x="92" y="155" fill="#fff" opacity="0.85" font-size="16" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">Ilustración demo</text>
+  </g>
+</svg>
