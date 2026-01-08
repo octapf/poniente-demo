@@ -4,6 +4,7 @@ import {
   renderStars,
   siteMock,
 } from "@/lib/siteMock";
+import { PonienteLogo } from "@/components/PonienteLogo";
 
 const { mapsLink: MAPS_LINK, mapsEmbed: MAPS_EMBED } = buildGoogleMapsUrls(
   siteMock.location.lat,
@@ -23,9 +24,7 @@ export default function Home() {
       <header className="sticky top-0 z-40 border-b border-black/5 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3">
-            <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
-              <span className="text-sm font-semibold tracking-tight">P</span>
-            </div>
+            <PonienteLogo className="h-10 w-10 text-accent" />
             <div className="leading-tight">
               <p className="text-sm font-semibold tracking-tight">PONIENTE</p>
               <p className="text-xs text-foreground/70">{siteMock.brand.subtitle}</p>
@@ -357,6 +356,12 @@ export default function Home() {
               © {new Date().getFullYear()} PONIENTE (Demo) · Sitio de muestra
             </p>
             <div className="flex flex-col gap-1 sm:items-end">
+              <div className="flex items-center gap-2 sm:justify-end">
+                <PonienteLogo className="h-7 w-7 text-accent" />
+                <span className="text-xs font-medium text-foreground/70">
+                  Mar del Plata · Bar de Playa
+                </span>
+              </div>
               <a
                 className="font-medium text-foreground/80 hover:text-foreground"
                 href={siteMock.links.whatsapp}
