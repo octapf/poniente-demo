@@ -96,7 +96,8 @@ export default function Home() {
                 Bar de Playa
               </p>
               <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-white/85 sm:text-lg">
-                {siteMock.brand.tagline}. Bajás, pedís algo rico y te quedás a ver el atardecer.
+                {siteMock.brand.tagline}. After beach con buena música, tragos fríos y
+                vibe de playa: caés, pedís, y te quedás hasta tarde.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -127,16 +128,16 @@ export default function Home() {
         <section className="grid gap-6 border-t border-foreground/10 py-12 md:grid-cols-3">
           {[
             {
-              title: "Secciones que venden",
-              body: "Propuesta, menú, galería, reseñas, ubicación y contacto en una sola página.",
+              title: "After beach listo",
+              body: "Un sitio directo: menú, galería, reseñas, ubicación y contacto para convertir visitas en reservas.",
             },
             {
-              title: "Rápida y responsive",
-              body: "Optimizada para móviles, ideal para QR en mesas o anuncios.",
+              title: "Móvil primero",
+              body: "Ideal para QR en la playa, historias de Instagram y campañas rápidas.",
             },
             {
-              title: "Lista para escalar",
-              body: "Se puede agregar reservas, eventos, carta dinámica y analytics cuando lo necesiten.",
+              title: "Eventos y promos",
+              body: "Se puede sumar agenda (DJ sets), promos/happy hour y reservas cuando lo necesiten.",
             },
           ].map((item) => (
             <div
