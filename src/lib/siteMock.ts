@@ -101,8 +101,8 @@ export const siteMock: SiteMock = {
     },
   ],
   gallery: {
-    // Portada real (colocar la foto en public/images/poniente-hero-source.jpg y correr `npm run process:hero`)
-    hero: "/images/poniente-hero.webp",
+    // Portada real (colocar la foto en public/images/poniente-bar-hero-source.jpg y correr `npm run process:hero`)
+    hero: "/images/poniente-bar-hero.webp",
     items: [
       "/images/poniente-1.svg",
       "/images/poniente-2.svg",
