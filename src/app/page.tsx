@@ -71,17 +71,17 @@ export default function Home() {
       </header>
 
       <main id="contenido" className="mx-auto max-w-6xl px-4 sm:px-6">
-        <section className="grid items-center gap-10 py-14 md:grid-cols-2 md:py-20">
+        <section className="grid items-center gap-10 py-12 md:grid-cols-2 md:py-16">
           <div>
             <p className="inline-flex items-center rounded-full border border-foreground/15 bg-background px-3 py-1 text-xs font-semibold text-foreground/80">
-              Sitio de muestra • 1 sola página • Estilos listos
+              Bar + playa + atardecer • Demo lista para vender
             </p>
             <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
               {siteMock.brand.name}
             </h1>
             <p className="mt-4 text-pretty text-lg text-foreground/75">
-              {siteMock.brand.tagline}. Una landing moderna, rápida y clara para
-              convertir visitas en reservas.
+              {siteMock.brand.tagline}. Sol, mar, naturaleza y buena vibra: una
+              web simple, linda y directa para que te encuentren y reserven.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -101,10 +101,10 @@ export default function Home() {
               </a>
             </div>
 
-            <dl className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-foreground/10 p-4">
+            <dl className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-foreground/10 bg-surface/70 p-4 shadow-sm">
               <div>
                 <dt className="text-xs font-medium text-foreground/60">Ambiente</dt>
-                <dd className="mt-1 text-sm font-semibold">Relax</dd>
+                <dd className="mt-1 text-sm font-semibold">Playero</dd>
               </div>
               <div>
                 <dt className="text-xs font-medium text-foreground/60">Coctelería</dt>
@@ -112,26 +112,32 @@ export default function Home() {
               </div>
               <div>
                 <dt className="text-xs font-medium text-foreground/60">Ideal</dt>
-                <dd className="mt-1 text-sm font-semibold">Atardecer</dd>
+                <dd className="mt-1 text-sm font-semibold">Bajar a la playa</dd>
               </div>
             </dl>
           </div>
 
           <div className="relative">
             <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-b from-accent to-transparent opacity-10" />
-            <div className="overflow-hidden rounded-3xl border border-foreground/10 bg-surface">
-              <Image
-                src={siteMock.gallery.hero}
-                alt="Vista ilustrativa de la terraza del bar (demo)"
-                width={1200}
-                height={800}
-                priority
-                className="h-auto w-full"
-              />
+            <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-surface shadow-sm">
+              <div className="relative h-[420px] w-full sm:h-[460px]">
+                <Image
+                  src={siteMock.gallery.hero}
+                  alt="Portada del bar (demo)"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 520px, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-foreground/10 bg-background/70 px-4 py-2 text-xs font-semibold text-foreground/80 backdrop-blur">
+                    {siteMock.brand.city} · {siteMock.hours.open}–{siteMock.hours.close}
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="mt-3 text-xs text-foreground/60">
-              {siteMock.gallery.note}
-            </p>
+            <p className="mt-3 text-xs text-foreground/60">{siteMock.gallery.note}</p>
           </div>
         </section>
 

@@ -101,7 +101,8 @@ export const siteMock: SiteMock = {
     },
   ],
   gallery: {
-    hero: "/images/poniente-hero.svg",
+    // Portada real (colocar la foto en public/images/poniente-hero-source.jpg y correr `npm run process:hero`)
+    hero: "/images/poniente-hero.webp",
     items: [
       "/images/poniente-1.svg",
       "/images/poniente-2.svg",
@@ -111,7 +112,7 @@ export const siteMock: SiteMock = {
       "/images/poniente-6.svg",
     ],
     note:
-      "Imágenes ilustrativas generadas para la demo (no se reutilizan fotos de Google Maps).",
+      "Portada: foto provista por el bar (demo). Galería: ilustraciones generadas para la demo.",
   },
 };
 

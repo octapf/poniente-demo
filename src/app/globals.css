@@ -30,7 +30,18 @@
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(
+      900px circle at 20% -10%,
+      color-mix(in oklab, var(--accent) 18%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px circle at 90% 0%,
+      color-mix(in oklab, var(--foreground) 10%, transparent),
+      transparent 55%
+    ),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
